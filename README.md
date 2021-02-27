@@ -8,3 +8,18 @@ This is an inspirational quote board web application created using HTML, CSS, an
 
 <a href='https://pngtree.com/so/brush'>brush png from pngtree.com</a>
 
+## Wireframe
+
+![landing page wireframe](images/wireframe/LandingPage.png)
+
+---
+
+![inspiration board wireframe](images/wireframe/InspirationBoard.png)
+
+---
+
+![archive wireframe](images/wireframe/Archive.png)
+
+---
+
+![about wireframe](images/wireframe/About.png)
