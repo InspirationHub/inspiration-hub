@@ -32,4 +32,4 @@ Our team uses Trello to manage out work flow. View our project management board 
 
 ## Domain Modeling
 
-![domain modeling](img/inspoHubDocMod.png)
+![domain modeling](img/inspoHubDomMod.png)
