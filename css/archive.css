@@ -1,0 +1,21 @@
+body {
+}
+table {
+  margin: auto;
+  margin-top: 5%;
+  width: 80%;
+  border-radius: 1px;
+}
+#quoteTitle {
+  width: 40%;
+}
+
+table th:nth-child(1) {
+  width: 10%;
+}
+table th:nth-child(4) {
+  width: 5%;
+}
+table th:nth-child(3) {
+  width: 20%;
+}
