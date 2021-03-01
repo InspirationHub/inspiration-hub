@@ -47,7 +47,14 @@
             </tr>
         </table>
     </div>
-    <button id="add-and-remove"></button>
+    <form>
+       <legend>Add Quote</legend>
+        <label for="quote-input">Type quote here.</label>
+        <input type="text" id="name-input" name="quoteText" required></input>
+        <label for="author-input">Type author name here.</label>
+        <input type="text" id="author-input" name="authorText" required></input>
+        <button type="submit">SUBMIT</button>
+    </form>
     <script src="app.js"></script>
     </main>
 </body>
