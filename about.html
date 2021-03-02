@@ -1,100 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InspirationHub</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/about.css">
+</head>
+
+<body>
+
   <header>
     <h1>InspirationHub</h1>
-    <li id="my board"><a href="my-board.html">My Board</a></li>
-    <li id="archive"><a href="archive.html">Archive</a></li>
-    <li id="about"><a href="about.html">About</a></li>
+    <ul>
+      <li id="my board"><a href="my-board.html">My Board</a></li>
+      <li id="archive"><a href="archive.html">Archive</a></li>
+      <li id="about"><a class="current-page" href="about.html">About</a></li>
+    </ul>
+  </header>
 
-</header>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InspirationHub</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="container w-1/5 mx-auto py-8">
-        <header>
-        </header>
-        <main class="my-8">
-          <h1 class="flex w-full mx-auto items-center justify-center my-8 text-6xl font-bold">
-            InspirationHub
-          </h1>
-          <p class="w-full text-xl text-gray-500">
-            Mission Statement goes here. Will probably be 3-4 sentences long. The aim is to be short and sweet. No rambling.
-          </p>
-          <button class="w-2/5 bg-gray-900 text-gray-400 h-16 justify-center mt-8 mb-2" id="github-button">
-            Github Profile
-          </button>
-          </div>
-          <div class="flex w-full mx-auto items-center justify-center my-8 mt-2" id="team">
-            <div class="flex">
-              <img class="self-center w-24" src="https://via.placeholder.com/150" />
-              <div class="ml-4">
-                <h2 class="text-2xl" id="member-name">Member Name</h2>
-                <p class="text-l text-gray-500">Short bio of person describing their skills and career</p>
-                <p class="text-l">links</p>
-              </div>
-            </div>
-          </div>
-          <div class="flex w-full mx-auto items-center justify-center my-8" id="team">
-            <div class="flex">
-              <img class="self-center w-24" src="https://via.placeholder.com/150" />
-              <div class="ml-4">
-                <h2 class="text-2xl" id="member-name">Member Name</h2>
-                <p class="text-l text-gray-500">Short bio of person describing their skills and career</p>
-                <p class="text-l">links</p>
-              </div>
-            </div>
-          </div>
-          <div class="flex w-full mx-auto items-center justify-center my-8" id="team">
-            <div class="flex">
-              <img class="self-center w-24" src="https://via.placeholder.com/150" />
-              <div class="ml-4">
-                <h2 class="text-2xl" id="member-name">Member Name</h2>
-                <p class="text-l text-gray-500">Short bio of person describing their skills and career</p>
-                <p class="text-l">links</p>
-              </div>
-            </div>
-          </div>
-          <div class="flex w-full mx-auto items-center justify-center my-8" id="team">
-            <div class="flex">
-              <img class="self-center w-24" src="https://via.placeholder.com/150" />
-              <div class="ml-4">
-                <h2 class="text-2xl" id="member-name">Member Name</h2>
-                <p class="text-l text-gray-500">Short bio of person describing their skills and career</p>
-                <p class="text-l">links</p>
-              </div>
-            </div>
-          </div>
-          <div class="flex w-full mx-auto items-center justify-center my-8" id="team">
-            <div class="flex">
-              <img class="self-center w-24" src="https://via.placeholder.com/150" />
-              <div class="ml-4">
-                <h2 class="text-2xl" id="member-name">Member Name</h2>
-                <p class="text-l text-gray-500">Short bio of person describing their skills and career</p>
-                <p class="text-l">links</p>
-              </div>
-            </div>
-          </div>
-        </div>  
-        </main>
+  <main class="my-8">
+    <div>
+      <h1 id="mission-title">
+        Mission Statement
+      </h1>
+      <p>
+        Mission Statement goes here. Will probably be 3-4 sentences long. The aim is to be short and sweet. No rambling.
+      </p>
+      <button id="github-button">
+        Github Profile
+      </button>
     </div>
-    <script src="app.js"></script>
-    <footer>
+
+    <div id="team">
       <div>
-          <a href="https://github.com/peterjast/inspiration-hub">
-              <img src="images/social-icons/github-icon.png" />
-          </a>
-          <img src="images/social-icons/facebook-icon.png" />
-          <img src="images/social-icons/twitter-icon.png" />
-          <img src="images/social-icons/insta-icon.png" />
+        <img src="https://via.placeholder.com/150" />
+        <div>
+          <h2 id="member-name">Member Name</h2>
+          <p>Short bio of person describing their skills and career</p>
+          <p>links</p>
+        </div>
       </div>
+    </div>
+
+    <div id="team">
+      <div>
+        <img src="https://via.placeholder.com/150" />
+        <div>
+          <h2 id="member-name">Member Name</h2>
+          <p>Short bio of person describing their skills and career</p>
+          <p>links</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="team">
+      <div>
+        <img src="https://via.placeholder.com/150" />
+        <div>
+          <h2 id="member-name">Member Name</h2>
+          <p>Short bio of person describing their skills and career</p>
+          <p>links</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="team">
+      <div>
+        <img src="https://via.placeholder.com/150" />
+        <div>
+          <h2 id="member-name">Member Name</h2>
+          <p>Short bio of person describing their skills and career</p>
+          <p>links</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="team">
+      <div>
+        <img src="https://via.placeholder.com/150" />
+        <div>
+          <h2 id="member-name">Member Name</h2>
+          <p>Short bio of person describing their skills and career</p>
+          <p>links</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div>
+      <a href="https://github.com/peterjast/inspiration-hub">
+        <img src="images/social-icons/github-icon.png" />
+      </a>
+      <img src="images/social-icons/facebook-icon.png" />
+      <img src="images/social-icons/twitter-icon.png" />
+      <img src="images/social-icons/insta-icon.png" />
+    </div>
   </footer>
+  <script src="js/app.js"></script>
 </body>
+
 </html>
