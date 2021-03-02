@@ -7,10 +7,47 @@ html, body {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+  height: 100px;
+  padding-bottom: 30px;
+}
+
 header h1 {
   float: left;
   font-weight: bolder;
-  font-size: 500%;
+  font-size: 50px;
+  padding: 20px;
+}
+
+header ul {
+  float: right;
+  padding: 25px;
+}
+
+header li {
+  display: inline;
+  font-size: 32px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+header a:visited {
+  color: rgb(0, 0, 0);
+}
+
+header a:hover {
+  color: rgb(0, 131, 201);
+  text-shadow: 0 0 .65px rgb(0, 131, 201), 0 0 .65px rgb(0, 131, 201);
+}
+
+.current-page {
+  text-decoration: underline;
+  font-weight: bolder;
 }
 
 footer {
