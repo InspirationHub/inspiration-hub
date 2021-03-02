@@ -7,6 +7,10 @@ html, body {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 header h1 {
   float: left;
   font-weight: bolder;
