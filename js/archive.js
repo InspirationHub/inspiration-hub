@@ -1,5 +1,15 @@
 'use strict';
 
+function Quote(quoteText, author, id) {
+  this.quoteText = quoteText;
+  this.author = author;
+  this.id = id;
+
+  Quote.all.push(this);
+}
+
+Quote.all = [];
+
 function ArchiveQuote(quoteText, author, id) {
   this.quoteText = quoteText;
   this.author = author;
@@ -16,29 +26,81 @@ function renderArchivedQuotes() {
   for(let i = 0; i < archivedQuotes.length; i++){
     new ArchiveQuote(archivedQuotes[i].quoteText, archivedQuotes[i].author, i);
   }
-  for(let i = 0; i < ArchiveQuote.all; i++){
+  console.log(ArchiveQuote.all);
+  for(let i = 0; i < ArchiveQuote.all.length; i++){
     const tableRowElem = document.createElement('tr');
+    tableRowElem.id = 'table-row-' + i;
     archiveTableElem.appendChild(tableRowElem);
 
     const tableQuoteElem = document.createElement('td');
-    tableQuoteElem.textContent = ArchiveQuote[i].quoteText;
+    tableQuoteElem.textContent = ArchiveQuote.all[i].quoteText;
     tableRowElem.appendChild(tableQuoteElem);
 
     const tableAuthorElem = document.createElement('td');
-    tableAuthorElem.textContent = ArchiveQuote[i].author;
+    tableAuthorElem.textContent = ArchiveQuote.all[i].author;
     tableRowElem.appendChild(tableAuthorElem);
 
     const tableAddElem = document.createElement('td');
     tableAddElem.textContent = '+';
-    tableAddElem.id = 'restore-' + i;
+    tableAddElem.id = i;
     tableRowElem.appendChild(tableAddElem);
 
     const tableRemoveElem = document.createElement('td');
     tableRemoveElem.textContent = 'X';
-    tableRemoveElem.id = 'remove-' + i;
+    tableRemoveElem.id = i;
     tableRowElem.appendChild(tableRemoveElem);
 
+    tableAddElem.addEventListener('click', restoreHandler);
+    tableRemoveElem.addEventListener('click', tableRemoveHandler);
   }
+}
+
+function restoreHandler(event){
+  event.preventDefault();
+  const id = event.target.id;
+  console.log(id);
+  const tableRowElem = document.getElementById('table-row-' + id);
+  tableRowElem.remove();
+
+  const storedQuotes = JSON.parse(localStorage.getItem('quotes'));
+  for(let i = 0; i < storedQuotes.length; i++){
+    new Quote(storedQuotes[i].quoteText, storedQuotes[i].author, i);
+  }
+
+  const newRestoredQuote = ArchiveQuote.all[id];
+
+  console.log('new restore', newRestoredQuote);
+
+  if(localStorage.quotes === undefined){
+    new Quote(newRestoredQuote.quoteText, newRestoredQuote.author, 0);
+  }
+
+  if(localStorage.quotes !== undefined){
+    new Quote(newRestoredQuote.quoteText, newRestoredQuote.author, Quote.all.length);
+  }
+
+  localStorage.setItem('quotes', JSON.stringify(Quote.all));
+
+  console.log(Quote.all);
+
+  ArchiveQuote.all.splice(newRestoredQuote.id, 1);
+
+  localStorage.setItem('archive', JSON.stringify(ArchiveQuote.all));
+
+}
+
+function tableRemoveHandler(event){
+  event.preventDefault();
+  const id = event.target.id;
+  console.log(id);
+  const tableRowElem = document.getElementById('table-row-' + id);
+  tableRowElem.remove();
+
+  const removedQuote = ArchiveQuote.all[id];
+
+  ArchiveQuote.all.splice(removedQuote.id, 1);
+
+  localStorage.setItem('archive', JSON.stringify(ArchiveQuote.all));
 }
 
 if(localStorage.archive !== undefined){
