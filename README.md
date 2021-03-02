@@ -1,4 +1,4 @@
-# inspiration-hub
+# Inspiration Hub
 
 Contributors: Chris Gantt, Jeremy Brazell, Michael Ryan, Jakob Lumpkin, Peter Staker
 
@@ -32,4 +32,4 @@ Our team uses Trello to manage out work flow. View our project management board 
 
 ## Domain Modeling
 
-![domain modeling](img/inspoHubDomMod.png)
+![domain modeling](images/inspoHubDocMod.png)
