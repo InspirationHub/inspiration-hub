@@ -1,86 +1,67 @@
 'use strict';
 
-//Board Object
-function Board(quote, author){
-    this.quote=quote;
-    this.author=author;
+//Quote Object
+function Quote(quoteText, author) {
+  this.quoteText = quoteText;
+  this.author = author;
 
-    Board.all.push(this);
-}
-Board.all=[];
-
-
-
-//function for adding to localSorage
-function addtoLocalStorage(value){
-    const JSONQuote=JSON.stringify(value);
-    localStorage.setItem('localquote', JSONQuote);
+  Quote.all.push(this);
 }
 
+Quote.all = [];
 
+Quote.prototype.render = function() {
+  const boardElem = document.getElementById('quote-board');
 
+  const quoteElem = document.createElement('div');
+  quoteElem.id = 'quote-container';
+  boardElem.appendChild(quoteElem);
 
+  const removeButtonElem = document.createElement('button');
+  removeButtonElem.id = 'remove-quote-button';
+  removeButtonElem.textContent = 'X';
+  quoteElem.appendChild(removeButtonElem);
 
-//checking if a user already have the data in a local storage
-let quoteinLocal=null;
- if (localStorage.length==0){
-    addtoLocalStorage(Board.all);
-    const localInfo=localStorage.getItem('localquote');
-    quoteinLocal=JSON.parse(localInfo);
- }else{
-    const localInfo=localStorage.getItem('localquote');
-    quoteinLocal=JSON.parse(localInfo);
- }
+  const quoteTextElem = document.createElement('div');
+  quoteTextElem.id = 'quote-text';
+  quoteTextElem.textContent = '"' + this.quoteText + '"';
+  quoteElem.appendChild(quoteTextElem);
 
+  const quoteAuthorElem = document.createElement('div');
+  quoteAuthorElem.id = 'quote-author';
+  quoteAuthorElem.textContent = '-' + this.author;
+  quoteElem.appendChild(quoteAuthorElem);
 
+  localStorage.setItem('quotes', JSON.stringify(Quote.all));
+};
 
-
-
-//calling function everytime you get new data to add to local storge
-function addTextToLocal(authorT, quoteT){
-    quoteinLocal.push({quote:quoteT, author:authorT});
-    addtoLocalStorage(quoteinLocal);
- }
-
-
-let displayArea=document.querySelector('#quote-board');
-function Display(){
- for (let i=0;i<quoteinLocal.length;i++){
-         let newDiv=document.createElement('DIV');
-         let newDiv2=document.createElement('DIV');
-         displayArea.appendChild(newDiv).textContent=quoteinLocal[i].quote;
-         displayArea.appendChild(newDiv2).textContent=quoteinLocal[i].author;
-     }
+function renderStoredQuotes() {
+  const storedQuotes = JSON.parse(localStorage.getItem('quotes'));
+  for(let i = 0; i < storedQuotes.length; i++){
+    let newQuote = new Quote(storedQuotes[i].quoteText, storedQuotes[i].author);
+    newQuote.render();
+  }
 }
-Display();
 
+//form submit
+const form = document.getElementById('new-quote-form');
 
+form.addEventListener('submit', submitHandler);
 
-//After sumbit
-function afterclick(event){
-    event.preventDefault();
-    //grabs data in add into to local Storage
-    let authorText=event.target.authorText.value;
-    let quoteText=event.target.quoteText.value;
-    addTextToLocal(authorText, quoteText);
+function submitHandler(event) {
+  event.preventDefault();
+  const newQuote = new Quote(event.target.quoteText.value, event.target.authorText.value);
 
-    //clears value after submittion
-    event.target.authorText.value="";
-    event.target.quoteText.value="";
+  //clears value
+  event.target.authorText.value='';
+  event.target.quoteText.value='';
 
-    //display
-    let newDiv=document.createElement('DIV');
-    let newDiv2=document.createElement('DIV');
-    displayArea.appendChild(newDiv).textContent=quoteText;
-    displayArea.appendChild(newDiv2).textContent=authorText;
-
+  newQuote.render();
 }
-//formSubmit
-let form=document.querySelector("form");
-form.addEventListener("submit", afterclick);
 
-
-
+if(localStorage.quotes !== undefined){
+  renderStoredQuotes();
+}
 
 
 
