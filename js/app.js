@@ -65,4 +65,14 @@ if(localStorage.quotes !== undefined){
 
 
 
+//display and hide form
+form.style.display="none";
 
+let openButton=document.getElementById('openButton');
+let closeButton=document.getElementById('closeButton');
+openButton.addEventListener('click', function(){
+    form.style.display="block";
+})
+closeButton.addEventListener('click', function(){
+    form.style.display="none";
+})
