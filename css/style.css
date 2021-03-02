@@ -61,3 +61,11 @@ footer div {
 footer img {
   width: 40px;
 }
+
+@media screen and (max-width: 900px) {
+  header li {
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+  }
+}
