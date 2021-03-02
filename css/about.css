@@ -1,3 +1,17 @@
+body {
+  text-align: -webkit-center;
+}
+
+main {
+  width: 80%;
+}
+
+
+
 #mission-title {
   font-size: 72px;
+}
+
+footer {
+  padding: 25px;
 }
