@@ -3,7 +3,7 @@ body {
 }
 
 main {
-  width: 80%;
+  width: 70%;
 }
 
 #mission {
@@ -11,30 +11,25 @@ main {
 }
 
 #mission h1 {
-  font-size: 72px;
+  font-size: 44px;
   padding-bottom: 10px;
 }
 
 #mission p {
   padding: 20px;
-  font-size: 25px;
-}
-
-#mission button {
-  font-size: 25px;
-  padding: 20px;
-  margin: 20px;
-  outline: none;
+  font-size: 20px;
 }
 
 #mission button {
   background-color: rgb(0, 131, 201);
   color: white;
-  padding: 20px 40px;
-  font-size: x-large;
+  padding: 15px 30px;
+  font-size: 18px;
   border-radius: 50px;
   border: none;
   box-shadow: 5px 5px 5px lightgrey;
+  outline: none;
+  margin: 10px;
 }
 
 .team-member {
@@ -44,29 +39,29 @@ main {
 }
 
 .profile-img {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   padding-right: 30px;
 }
 
 .member-description {
   float: right;
-  max-width: 550px;
+  max-width: 400px;
 }
 
 .member-description h2 {
-  font-size: 38px;
-  padding: 20px;
+  font-size: 30px;
+  padding: 10px;
 }
 
 .member-description p {
-  font-size: 24px;
-  padding: 20px;
+  font-size: 20px;
+  padding: 10px;
 }
 
 .member-description img {
-  width: 50px;
+  width: 30px;
   padding: 1px;
 }
 
@@ -75,7 +70,7 @@ footer {
   padding: 25px;
 }
 
-@media screen and (max-width:1100px) {
+@media screen and (max-width:924px) {
   main {
     width: 100%;
   }
@@ -85,27 +80,32 @@ footer {
   }
 
   .profile-img {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
   
   .member-description h2 {
-    font-size: 30px;
-    padding: 10px;
+    font-size: 24px;
   }
   
   .member-description p {
-    font-size: 20px;
-    padding: 10px;
-  }
-  
-  .member-description img {
-    width: 40px;
+    font-size: 18px;
   }
 }
 
-@media screen and (min-width: 818px) {
+@media screen and (min-width: 767px) {
   #mission p {
-    max-width: 750px;
+    max-width: 546px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .member-description h2 {
+    font-size: 18px;
+    padding-bottom: 5px;
+  }
+  
+  .member-description p {
+    font-size: 15px;
   }
 }
