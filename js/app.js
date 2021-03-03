@@ -52,6 +52,13 @@ Quote.prototype.render = function() {
   localStorage.setItem('quotes', JSON.stringify(Quote.all));
 };
 
+if(localStorage.archive !== undefined){
+  const archivedQuotes = JSON.parse(localStorage.getItem('archive'));
+  for(let i = 0; i < archivedQuotes.length; i++){
+    new ArchiveQuote(archivedQuotes[i].quoteText, archivedQuotes[i].author, i);
+  }
+}
+
 function removeHandler(event){
   event.preventDefault();
   const id = event.target.id;
@@ -61,6 +68,7 @@ function removeHandler(event){
 
   const storedQuotes = JSON.parse(localStorage.getItem('quotes'));
   const newArchiveQuote = Quote.all[id];
+
   console.log('newarchive', newArchiveQuote);
 
   if(localStorage.archive === undefined){

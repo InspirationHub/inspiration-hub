@@ -1,19 +1,54 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height:100%
+}
+
 main{
+    margin: 0 auto;
+    max-width: 960px;
     height: 85%;
 }
+
+#quote-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#quote-board button{
+    display: none;
+}
+
+#quote-board:hover button{
+    display: inline;
+}
+
+#quote-board > * {
+    margin: 20px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    border-color: blanchedalmond;
+}
+
 #openButton {
-    border-radius: 2em;
-    height: 100px;
-    width: 100px;
+    position:fixed;
+    border-radius: 1em;
+    height: 50px;
+    width: 50px;
     background-color: black;
-    font-size: 5.6em;
+    font-size: 30px;
     color:white;
     border-style: none;
-    margin-right: 10px;
+    bottom: 4%;
+    right: 4%;
+    z-index: 1;
     
 }
-#closeButton {
-    border-radius: 2em;
+ #closeButton {
+    border-radius: 1em;
     height: 100px;
     width: 100px;
     background-color: black;
@@ -22,20 +57,21 @@ main{
     border-style: none;
     /*padding: .1em;*/
     transform: rotate(-45deg);
-}
+} 
 #new-quote-form {
-    margin-top: 50px;
     height: 450px;
-    display: inline;
+    display: fixed;
     float: right;
     width: 260px;
+    background-color:whitesmoke;
     border:1px solid black;
     font-family:Helvetica, sans-serif;
     margin: 0 auto;
     text-align: center;
     position: fixed;
-    top: 650px;
-    right: 50px;
+    bottom: 3%;
+    right: 3%;
+    z-index: 2;
 }
 #name-input {
     margin-top: 8%;
@@ -62,7 +98,7 @@ main{
     background-color: rgb(0, 131, 201);
     color: white;
     padding: 10px 25px;
-    border-radius: 50px;
+    border-radius: 30px;
     width: 55%;
     border-style: none;
     font-size: x-large;
@@ -87,14 +123,14 @@ legend {
     margin-bottom: 25px;
 }
 
-#open-close-buttons {
+/* #open-close-buttons {
     position: absolute;
-    top: 1160px;
-    left: 87%; 
+    top: 80%;
+    left: 90%; 
     outline: none;
-}
+} */
 
-#openButton p {
+/* #openButton p {
     position: relative;
     bottom: 11px;
 }
@@ -102,31 +138,50 @@ legend {
 #closeButton p {
     position: relative;
     bottom: 11px;
-}
+} */
 
-#quote-container {
+/* #quote-container {
    height: 208px;
    width: 208px; 
    border: 1px solid black;
    /* background-color: red; */
-   position: absolute;
+   /* position: absolute;
    left: 423px;
    top: 169px;
-}
+} */ */
 
-#quote-board {
+/* #quote-board {
   overflow: scroll;  
-}
+} */
 
-#quote-text {
+/* #quote-text {
     margin-top: 17px
 }
 
 #quote-author {
     margin-top: 20px;
     
+} */
+
+/* .quoteContainer {
+    background-color: red;
+} */
+
+html, body {
+    height: 100%;
 }
 
-.quoteContainer {
-    background-color: red;
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    flex-shrink: 0;
 }
