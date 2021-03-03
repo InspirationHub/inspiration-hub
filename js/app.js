@@ -1,5 +1,8 @@
 'use strict';
 
+let removedIDArray = [];
+let removedCounter = 0;
+
 //Quote Object
 function Quote(quoteText, author, id) {
   this.quoteText = quoteText;
@@ -26,26 +29,30 @@ Quote.prototype.render = function() {
 
   const quoteElem = document.createElement('div');
   quoteElem.id = 'quote-container-' + this.id;
-  quoteElem.class = 'quoteContainer';
+  quoteElem.className = 'card';
   boardElem.appendChild(quoteElem);
 
-  const removeButtonElem = document.createElement('button');
-  removeButtonElem.id = this.id;
-  removeButtonElem.class = 'removeQuoteButton';
-  removeButtonElem.textContent = 'X';
-  quoteElem.appendChild(removeButtonElem);
+  const flipCardInnerElem = document.createElement('div');
+  flipCardInnerElem.className = 'flip-card-inner';
+  quoteElem.appendChild(flipCardInnerElem);
 
   const quoteTextElem = document.createElement('div');
   quoteTextElem.id = 'quote-text-' + this.id;
-  quoteTextElem.class = 'quoteText';
+  quoteTextElem.className = 'flip-card-front';
   quoteTextElem.textContent = '"' + this.quoteText + '"';
-  quoteElem.appendChild(quoteTextElem);
+  flipCardInnerElem.appendChild(quoteTextElem);
 
   const quoteAuthorElem = document.createElement('div');
   quoteAuthorElem.id = 'quote-author-' + this.id;
-  quoteAuthorElem.class = 'quoteAuthor';
-  quoteAuthorElem.textContent = '-' + this.author;
-  quoteElem.appendChild(quoteAuthorElem);
+  quoteAuthorElem.className = 'flip-card-back';
+  quoteAuthorElem.textContent = this.author;
+  flipCardInnerElem.appendChild(quoteAuthorElem);
+
+  const removeButtonElem = document.createElement('button');
+  removeButtonElem.id = this.id;
+  removeButtonElem.className = 'removeCardButton';
+  removeButtonElem.textContent = 'X';
+  quoteAuthorElem.appendChild(removeButtonElem);
 
   removeButtonElem.addEventListener('click', removeHandler);
 
@@ -66,8 +73,17 @@ function removeHandler(event){
   const quoteElem = document.getElementById('quote-container-' + id);
   quoteElem.remove();
 
-  const storedQuotes = JSON.parse(localStorage.getItem('quotes'));
-  const newArchiveQuote = Quote.all[id];
+  for(let i = 0; i < removedIDArray.length; i++){
+    if(removedIDArray[i] < id){
+      removedCounter+=1;
+    }
+  }
+
+  removedIDArray.push(id);
+
+  const newArchiveQuote = Quote.all[id - removedCounter];
+
+  let index = Quote.all.indexOf(newArchiveQuote);
 
   console.log('newarchive', newArchiveQuote);
 
@@ -81,16 +97,17 @@ function removeHandler(event){
 
   localStorage.setItem('archive', JSON.stringify(ArchiveQuote.all));
 
-  storedQuotes.splice(newArchiveQuote.id, 1);
-  localStorage.setItem('quotes', JSON.stringify(storedQuotes));
+  Quote.all.splice(index, 1);
 
+  localStorage.setItem('quotes', JSON.stringify(Quote.all));
+
+  removedCounter = 0;
 }
 
 function renderStoredQuotes() {
   const storedQuotes = JSON.parse(localStorage.getItem('quotes'));
   for(let i = 0; i < storedQuotes.length; i++){
-    let id = i;
-    let newQuote = new Quote(storedQuotes[i].quoteText, storedQuotes[i].author, id);
+    let newQuote = new Quote(storedQuotes[i].quoteText, storedQuotes[i].author, i);
     newQuote.render();
   }
 }
