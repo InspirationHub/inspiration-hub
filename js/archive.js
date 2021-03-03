@@ -20,12 +20,21 @@ function ArchiveQuote(quoteText, author, id) {
 
 ArchiveQuote.all = [];
 
-function renderArchivedQuotes() {
-  const archivedQuotes = JSON.parse(localStorage.getItem('archive'));
-  const archiveTableElem = document.getElementById('tableBody');
-  for(let i = 0; i < archivedQuotes.length; i++){
-    new ArchiveQuote(archivedQuotes[i].quoteText, archivedQuotes[i].author, i);
+
+const archivedQuotes = JSON.parse(localStorage.getItem('archive'));
+for(let i = 0; i < archivedQuotes.length; i++){
+  new ArchiveQuote(archivedQuotes[i].quoteText, archivedQuotes[i].author, i);
+}
+
+function clearArchives(){
+  for(let i = 0; i < ArchiveQuote.all; i++){
+    const removeRow = document.getElementById('table-row-' + i);
+    removeRow.remove();
   }
+}
+
+function renderArchivedQuotes() {
+  const archiveTableElem = document.getElementById('tableBody');
   console.log(ArchiveQuote.all);
   for(let i = 0; i < ArchiveQuote.all.length; i++){
     const tableRowElem = document.createElement('tr');
@@ -55,6 +64,11 @@ function renderArchivedQuotes() {
   }
 }
 
+const storedQuotes = JSON.parse(localStorage.getItem('quotes'));
+for(let i = 0; i < storedQuotes.length; i++){
+  new Quote(storedQuotes[i].quoteText, storedQuotes[i].author, i);
+}
+
 function restoreHandler(event){
   event.preventDefault();
   const id = event.target.id;
@@ -62,12 +76,10 @@ function restoreHandler(event){
   const tableRowElem = document.getElementById('table-row-' + id);
   tableRowElem.remove();
 
-  const storedQuotes = JSON.parse(localStorage.getItem('quotes'));
-  for(let i = 0; i < storedQuotes.length; i++){
-    new Quote(storedQuotes[i].quoteText, storedQuotes[i].author, i);
-  }
 
-  const newRestoredQuote = ArchiveQuote.all[id];
+  let newRestoredQuote = ArchiveQuote.all[id];
+
+  let index = ArchiveQuote.all.indexOf(newRestoredQuote);
 
   console.log('new restore', newRestoredQuote);
 
@@ -83,10 +95,11 @@ function restoreHandler(event){
 
   console.log(Quote.all);
 
-  ArchiveQuote.all.splice(newRestoredQuote.id, 1);
+  ArchiveQuote.all.splice(index, 1);
 
   localStorage.setItem('archive', JSON.stringify(ArchiveQuote.all));
 
+  clearArchives();
 }
 
 function tableRemoveHandler(event){
