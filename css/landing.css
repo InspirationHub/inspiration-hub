@@ -12,24 +12,25 @@ section {
 
 section h1 {
   font-weight: bolder;
-  font-size: 700%;
+  font-size: 72px;
   padding-bottom: 20px;
 }
 
 section h2 {
   font-weight: light;
   color: rgb(128, 128, 128);
-  font-size: x-large;
+  font-size: 20px;
   padding-bottom: 20px;
 }
 
 section button {
   background-color: rgb(0, 131, 201);
   color: white;
-  padding: 20px 40px;
-  font-size: x-large;
+  padding: 15px 30px;
+  font-size: 18px;
   border-radius: 50px;
   border: none;
   box-shadow: 5px 5px 5px lightgrey;
+  outline: none;
 }
 
