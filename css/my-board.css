@@ -1,126 +1,127 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    height:100%
+body {
+  height: 100%;
 }
 
-main{
-    margin: 0 auto;
-    max-width: 960px;
-    height: 85%;
+main {
+  margin: 0 auto;
+  max-width: 960px;
+  height: 85%;
 }
 
 #quote-board {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-#quote-board button{
-    display: none;
+#quote-board button {
+  display: none;
 }
 
-#quote-board:hover button{
-    display: inline;
+#quote-board:hover button {
+  display: inline;
 }
 
 #quote-board > * {
-    margin: 20px 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    border-color: blanchedalmond;
+  margin: 20px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  border-color: blanchedalmond;
 }
 
 #openButton {
-    position:fixed;
-    border-radius: 1em;
-    height: 50px;
-    width: 50px;
-    background-color: black;
-    font-size: 30px;
-    color:white;
-    border-style: none;
-    bottom: 4%;
-    right: 4%;
-    z-index: 1;
-    
+  position: fixed;
+  border-radius: 1em;
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  font-size: 30px;
+  color: white;
+  border-style: none;
+  bottom: 4%;
+  right: 4%;
+  z-index: 1;
 }
- #closeButton {
-    border-radius: 1em;
-    height: 100px;
-    width: 100px;
-    background-color: black;
-    font-size: 5.6em;
-    color:white;
-    border-style: none;
-    /*padding: .1em;*/
-    transform: rotate(-45deg);
-} 
+#closeButton {
+  border-radius: 1em;
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  font-size: 5.6em;
+  color: white;
+  border-style: none;
+  /*padding: .1em;*/
+  transform: rotate(-45deg);
+}
 #new-quote-form {
-    height: 450px;
-    display: fixed;
-    float: right;
-    width: 260px;
-    background-color:whitesmoke;
-    border:1px solid black;
-    font-family:Helvetica, sans-serif;
-    margin: 0 auto;
-    text-align: center;
-    position: fixed;
-    bottom: 3%;
-    right: 3%;
-    z-index: 2;
+  height: 450px;
+  display: fixed;
+  float: right;
+  width: 260px;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  font-family: Helvetica, sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  z-index: 2;
 }
 #name-input {
-    margin-top: 8%;
-    height: 200px;
-    width:85%; 
-    word-wrap: break-word;
-    word-break: break-all;
+  margin-top: 8%;
+  height: 200px;
+  width: 85%;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 #author-input {
-    width: 85%;
-    margin-top: 8%;
-    height: 25px;
+  width: 85%;
+  margin-top: 8%;
+  height: 25px;
 }
 ::placeholder {
-    color: rgb(155, 155, 155);
-    text-align: center;
-    font-family: Helvetica, sans-serif;
+  color: rgb(155, 155, 155);
+  text-align: center;
+  font-family: Helvetica, sans-serif;
 }
 #new-quote-form button {
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 8%;
-    background-color: rgb(0, 131, 201);
-    color: white;
-    padding: 10px 25px;
-    border-radius: 30px;
-    width: 55%;
-    border-style: none;
-    font-size: x-large;
-    box-shadow: 5px 5px 5px lightgrey;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 8%;
+  background-color: rgb(0, 131, 201);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  width: 55%;
+  border-style: none;
+  font-size: x-large;
+  box-shadow: 5px 5px 5px lightgrey;
 }
 #new-quote-form p {
-    color: rgb(168, 168, 168);
-    font-weight: lighter;
-    margin-top: 20px;
+  color: rgb(168, 168, 168);
+  font-weight: lighter;
+  margin-top: 20px;
+  position: absolute;
+  left: 40%;
 }
 #form-content {
-    margin:0 auto;
+  margin: 0 auto;
 }
 legend {
-    text-align: center;
-    margin-top: 8%;
-    font-weight: bold;
-    font-size: 25px;
+  text-align: center;
+  margin-top: 8%;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 #new-quote-form submit {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 /* #open-close-buttons {
@@ -145,10 +146,11 @@ legend {
    width: 208px; 
    border: 1px solid black;
    /* background-color: red; */
-   /* position: absolute;
+/* position: absolute;
    left: 423px;
    top: 169px;
-} */ */
+} */
+*/
 
 /* #quote-board {
   overflow: scroll;  
@@ -168,20 +170,46 @@ legend {
 } */
 
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-    flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 footer {
-    width: 100%;
-    text-align: center;
-    flex-shrink: 0;
+  width: 100%;
+  text-align: center;
+  flex-shrink: 0;
 }
+
+#openButton:hover {
+  width: 1.7em;
+  height: 1.7em;
+}
+
+#openButton:active {
+  outline-style: none;
+}
+
+#new-quote-form p:hover {
+  text-decoration: underline;
+}
+
+/*#new-quote-form button:hover {
+  width: 6em;
+  height: 2.1em;
+}*/
+
+#new-quote-form button:active {
+  outline-style: none;
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
+
+
