@@ -109,3 +109,10 @@ footer {
     font-size: 15px;
   }
 }
+
+
+button:active {
+  outline-style: none;
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
