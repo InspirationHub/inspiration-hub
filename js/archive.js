@@ -55,7 +55,7 @@ function renderArchivedQuotes() {
     tableRowElem.appendChild(tableAddElem);
 
     const tableRemoveElem = document.createElement('td');
-    tableRemoveElem.textContent = 'X';
+    tableRemoveElem.textContent = 'x';
     tableRemoveElem.id = i;
     tableRowElem.appendChild(tableRemoveElem);
 

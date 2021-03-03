@@ -236,13 +236,13 @@ legend {
   }
   
   .flip-card-front {
-    background-color: #bbb;
+    background-color:whitesmoke;
     color: black;
   }
   
   .flip-card-back {
-    background-color: #bbb;
-    color:black;
+    background-color: black;
+    color:whitesmoke;
     transform: rotateY(180deg);
     
     top: 0; right: 0; bottom: 0; left: 0;

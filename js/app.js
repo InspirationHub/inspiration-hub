@@ -42,7 +42,7 @@ Quote.prototype.render = function() {
   const quoteAuthorElem = document.createElement('div');
   quoteAuthorElem.id = 'quote-author-' + this.id;
   quoteAuthorElem.className = 'flip-card-back';
-  quoteAuthorElem.textContent = '-' + this.author;
+  quoteAuthorElem.textContent = this.author;
   flipCardInnerElem.appendChild(quoteAuthorElem);
 
   const removeButtonElem = document.createElement('button');
