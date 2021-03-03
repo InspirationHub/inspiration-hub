@@ -20,17 +20,13 @@ function ArchiveQuote(quoteText, author, id) {
 
 ArchiveQuote.all = [];
 
+let removedIDArray = [];
+let removedCounter = 0;
+
 
 const archivedQuotes = JSON.parse(localStorage.getItem('archive'));
 for(let i = 0; i < archivedQuotes.length; i++){
   new ArchiveQuote(archivedQuotes[i].quoteText, archivedQuotes[i].author, i);
-}
-
-function clearArchives(){
-  for(let i = 0; i < ArchiveQuote.all; i++){
-    const removeRow = document.getElementById('table-row-' + i);
-    removeRow.remove();
-  }
 }
 
 function renderArchivedQuotes() {
@@ -76,8 +72,17 @@ function restoreHandler(event){
   const tableRowElem = document.getElementById('table-row-' + id);
   tableRowElem.remove();
 
+  for(let i = 0; i < removedIDArray.length; i++){
+    if(removedIDArray[i] < id){
+      removedCounter+=1;
+    }
+  }
 
-  let newRestoredQuote = ArchiveQuote.all[id];
+  console.log('arr', removedIDArray);
+
+  removedIDArray.push(id);
+
+  let newRestoredQuote = ArchiveQuote.all[id - removedCounter];
 
   let index = ArchiveQuote.all.indexOf(newRestoredQuote);
 
@@ -99,7 +104,8 @@ function restoreHandler(event){
 
   localStorage.setItem('archive', JSON.stringify(ArchiveQuote.all));
 
-  clearArchives();
+
+  removedCounter = 0;
 }
 
 function tableRemoveHandler(event){
@@ -109,11 +115,25 @@ function tableRemoveHandler(event){
   const tableRowElem = document.getElementById('table-row-' + id);
   tableRowElem.remove();
 
-  const removedQuote = ArchiveQuote.all[id];
+  for(let i = 0; i < removedIDArray.length; i++){
+    if(removedIDArray[i] < id){
+      removedCounter+=1;
+    }
+  }
+
+  console.log('arr', removedIDArray);
+
+  removedIDArray.push(id);
+
+  const removedQuote = ArchiveQuote.all[id - removedCounter];
 
   ArchiveQuote.all.splice(removedQuote.id, 1);
 
   localStorage.setItem('archive', JSON.stringify(ArchiveQuote.all));
+
+  removedIDArray.push(id);
+
+  removedCounter = 0;
 }
 
 if(localStorage.archive !== undefined){
