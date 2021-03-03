@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>InspirationHubz</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InspirationHub</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/my-board.css">
 </head>
 <body>
     <header>
         <h1>InspirationHub</h1>
-        <li id="my board"><a href="my-board.html">My Board</a></li>
-        <li id="archive"><a href="archive.html">Archive</a></li>
-        <li id="about"><a href="about.html">About</a></li>
-    </header>
+        <ul>
+          <li id="my board"><a class="current-page" href="my-board.html">My Board</a></li>
+          <li id="archive"><a href="archive.html">Archive</a></li>
+          <li id="about"><a href="about.html">About</a></li>
+        </ul>
+      </header>
 
     <main>
     <div id="quote-board">
@@ -20,24 +27,29 @@
         </div> -->
     </div>
     <form id = "new-quote-form">
-       <legend>Add Quote</legend>
-        <label for="quote-input">Quote:</label>
-        <input type="text" id="name-input" name="quoteText" required></input>
-        <label for="author-input">Author:</label>
-        <input type="text" id="author-input" name="authorText" required></input>
-        <button type="submit">SUBMIT</button>
+        <legend>Add Quote</legend>
+            <label for="quote-input"></label>
+            <textarea type="text" id="name-input" placeholder="click here to add quote" name="quoteText" required></textarea>
+            <label for="author-input"></label>
+            <textarea type="text" id="author-input" placeholder="click here to add author" name="authorText" required></textarea>
+            <button type="submit">SUBMIT</button>
+            <p id="close-button">Cancel</p>
     </form>
-    <button id="openButton">+</button>
-    <button id="closeButton">x</button>
+    <!-- <button id="openButton">+</button>
+    <button id="closeButton">x</button> -->
+    <div id="open-close-buttons">
+        <button id="openButton"><p>+</p></button>
+        <button id="closeButton"><p>+</p></button>
+    </div>
+</main>
     <footer>
         <div class="flex">
-            <img class="self-center w-8 mr-1" src="img/twitter.png" />
-            <img class="self-center w-8 mr-1" src="img/fb.png" />
-            <img class="self-center w-8 mr-1" src="img/insta.png" />
-            <img class="self-center w-8 mr-1" src="img/git.png" />
+            <img class="self-center w-8 mr-1" src="images/social-icons/github-icon.png" />
+            <img class="self-center w-8 mr-1" src="images/social-icons/facebook-icon.png" />
+            <img class="self-center w-8 mr-1" src="images/social-icons/twitter-icon.png" />
+            <img class="self-center w-8 mr-1" src="images/social-icons/insta-icon.png" />
           </div>    
     </footer>
-    </main>
     <script src="js/app.js"></script>
 </body>
 </html>
