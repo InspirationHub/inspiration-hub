@@ -1,5 +1,8 @@
 'use strict';
 
+let removedIDArray = [];
+let removedCounter = 0;
+
 //Quote Object
 function Quote(quoteText, author, id) {
   this.quoteText = quoteText;
@@ -70,8 +73,17 @@ function removeHandler(event){
   const quoteElem = document.getElementById('quote-container-' + id);
   quoteElem.remove();
 
-  const storedQuotes = JSON.parse(localStorage.getItem('quotes'));
-  const newArchiveQuote = Quote.all[id];
+  for(let i = 0; i < removedIDArray.length; i++){
+    if(removedIDArray[i] < id){
+      removedCounter+=1;
+    }
+  }
+
+  removedIDArray.push(id);
+
+  const newArchiveQuote = Quote.all[id - removedCounter];
+
+  let index = Quote.all.indexOf(newArchiveQuote);
 
   console.log('newarchive', newArchiveQuote);
 
@@ -85,16 +97,17 @@ function removeHandler(event){
 
   localStorage.setItem('archive', JSON.stringify(ArchiveQuote.all));
 
-  storedQuotes.splice(newArchiveQuote.id, 1);
-  localStorage.setItem('quotes', JSON.stringify(storedQuotes));
+  Quote.all.splice(index, 1);
 
+  localStorage.setItem('quotes', JSON.stringify(Quote.all));
+
+  removedCounter = 0;
 }
 
 function renderStoredQuotes() {
   const storedQuotes = JSON.parse(localStorage.getItem('quotes'));
   for(let i = 0; i < storedQuotes.length; i++){
-    let id = i;
-    let newQuote = new Quote(storedQuotes[i].quoteText, storedQuotes[i].author, id);
+    let newQuote = new Quote(storedQuotes[i].quoteText, storedQuotes[i].author, i);
     newQuote.render();
   }
 }

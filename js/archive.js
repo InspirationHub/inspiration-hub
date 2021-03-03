@@ -23,7 +23,6 @@ ArchiveQuote.all = [];
 let removedIDArray = [];
 let removedCounter = 0;
 
-
 const archivedQuotes = JSON.parse(localStorage.getItem('archive'));
 for(let i = 0; i < archivedQuotes.length; i++){
   new ArchiveQuote(archivedQuotes[i].quoteText, archivedQuotes[i].author, i);
@@ -122,8 +121,6 @@ function tableRemoveHandler(event){
   }
 
   console.log('arr', removedIDArray);
-
-  removedIDArray.push(id);
 
   const removedQuote = ArchiveQuote.all[id - removedCounter];
 
