@@ -127,7 +127,9 @@ function tableRemoveHandler(event){
 
   const removedQuote = ArchiveQuote.all[id - removedCounter];
 
-  ArchiveQuote.all.splice(removedQuote.id, 1);
+  let index = ArchiveQuote.all.indexOf(removedQuote);
+
+  ArchiveQuote.all.splice(index, 1);
 
   localStorage.setItem('archive', JSON.stringify(ArchiveQuote.all));
 
