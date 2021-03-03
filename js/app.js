@@ -120,7 +120,7 @@ if(localStorage.quotes !== undefined){
 form.style.display='none';
 
 let openButton=document.getElementById('openButton');
-let closeButton=document.getElementById('closeButton');
+let closeButton=document.getElementById('close-button');
 openButton.addEventListener('click', function(){
   form.style.display='block';
 });
