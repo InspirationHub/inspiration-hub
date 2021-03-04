@@ -36,6 +36,7 @@ main {
   margin: 40px;
   display: flex;
   justify-content: center;
+  
 }
 
 .profile-img {
@@ -48,6 +49,8 @@ main {
 .member-description {
   float: right;
   max-width: 400px;
+  background-color: whitesmoke;
+
 }
 
 .member-description h2 {
@@ -90,6 +93,7 @@ footer {
   
   .member-description p {
     font-size: 18px;
+    
   }
 }
 
@@ -115,4 +119,14 @@ button:active {
   outline-style: none;
   box-shadow: 0 1px #666;
   transform: translateY(1px);
+}
+
+p {
+  font-weight:lighter;
+  color:gray;
+  
+}
+
+h2 {
+  font-weight: bolder;
 }

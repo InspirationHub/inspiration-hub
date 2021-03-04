@@ -51,7 +51,7 @@ Quote.prototype.render = function() {
   const removeButtonElem = document.createElement('button');
   removeButtonElem.id = this.id;
   removeButtonElem.className = 'removeCardButton';
-  removeButtonElem.textContent = 'X';
+  removeButtonElem.textContent = 'x';
   quoteAuthorElem.appendChild(removeButtonElem);
 
   removeButtonElem.addEventListener('click', removeHandler);
