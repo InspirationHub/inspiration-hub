@@ -43,7 +43,8 @@ function refreshQuote() {
 refreshQuote();
 
 function addToBoard() {
-  // do some things
+  // add to board
+  // remove quote from quotes list, stretch
   refreshQuote();
 }
 
