@@ -15,6 +15,11 @@ button:hover{
 a {
   text-decoration: none;
   font-family: Helvetica, Arial, sans-serif;
+  color: black;
+}
+
+a:visited {
+  color: black;
 }
 
 header {
@@ -69,16 +74,21 @@ footer img {
   width: 28px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 717px) {
   header li {
-    font-size: 18px;
+    font-size: 15px;
     padding: 5px;
     font-weight: bold;
+  }
+
+  header ul {
+    padding-right: 10px;
   }
 
   header h1 {
     font-size: 25px;
     padding-right: 5px;
+    padding-left: 15px;
   }
 }
 
