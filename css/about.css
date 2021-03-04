@@ -130,3 +130,7 @@ p {
 h2 {
   font-weight: bolder;
 }
+
+button:hover {
+  filter: brightness(110%);
+}
