@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+}
+
+#quote-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#quote-board button {
+  display: none;
+}
+
+#quote-board:hover button {
+  display: inline;
+}
+
+#quote-board > * {
+  margin: 20px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  border-color: blanchedalmond;
+}
+
+#openButton {
+  position: fixed;
+  border-radius: 1em;
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  font-size: 30px;
+  color: white;
+  border-style: none;
+  bottom: 4%;
+  right: 4%;
+  z-index: 1;
+}
+#closeButton {
+  border-radius: 1em;
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  font-size: 5.6em;
+  color: white;
+  border-style: none;
+  transform: rotate(-45deg);
+}
+#new-quote-form {
+  height: 450px;
+  display: fixed;
+  float: right;
+  width: 260px;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  font-family: Helvetica, sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  z-index: 2;
+}
+#name-input {
+  margin-top: 8%;
+  height: 200px;
+  width: 85%;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+#author-input {
+  width: 85%;
+  margin-top: 8%;
+  height: 25px;
+}
+::placeholder {
+  color: rgb(155, 155, 155);
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+}
+#new-quote-form button {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 8%;
+  background-color: rgb(0, 131, 201);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  width: 55%;
+  border-style: none;
+  font-size: x-large;
+  box-shadow: 5px 5px 5px lightgrey;
+}
+#new-quote-form p {
+  color: rgb(168, 168, 168);
+  font-weight: lighter;
+  margin-top: 20px;
+  position: absolute;
+  left: 40%;
+}
+#form-content {
+  margin: 0 auto;
+}
+legend {
+  text-align: center;
+  margin-top: 8%;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#new-quote-form submit {
+  margin-bottom: 25px;
+}
+
+ */
+
+#quote-board {
+    display: grid;
+    grid-gap: 1.5rem;
+    padding: 3rem;
+    background: whitesmoke;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+  
+.card {
+  display:flex;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+  }
+  
+.flip-card-inner {
+  border-radius: 0.25rem;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+.card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+  
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  }
+  
+.flip-card-front {
+  background-color:whitesmoke;
+  color: black;
+}
+  
+.flip-card-back {
+  background-color: black;
+  color:whitesmoke;
+  transform: rotateY(180deg);
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+
+#openButton:hover {
+    width: 1.7em;
+    height: 1.7em;
+  }
+  
+#openButton:active {
+    outline-style: none;
+  }
+  
+#new-quote-form p:hover {
+    text-decoration: underline;
+  }
+  
+#new-quote-form button:active {
+    outline-style: none;
+    box-shadow: 0 1px #666;
+    transform: translateY(1px);
+  }
+  
+.removeCardButton {
+    position:absolute;
+    top:0; 
+    left:0;
+}  
+
+.removeCardButton:hover {
+    cursor: pointer;
+}  
+
+input[type=text] {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+button:focus {
+    outline:0;
+}

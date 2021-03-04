@@ -1,0 +1,136 @@
+body {
+  text-align: -webkit-center;
+}
+
+main {
+  width: 70%;
+}
+
+#mission {
+  margin-bottom: 50px;
+}
+
+#mission h1 {
+  font-size: 44px;
+  padding-bottom: 10px;
+}
+
+#mission p {
+  padding: 20px;
+  font-size: 20px;
+}
+
+#mission button {
+  background-color: rgb(0, 131, 201);
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 5px 5px 5px lightgrey;
+  outline: none;
+  margin: 10px;
+}
+
+.team-member {
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.profile-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  padding-right: 30px;
+}
+
+.member-description {
+  float: right;
+  max-width: 400px;
+  background-color: whitesmoke;
+
+}
+
+.member-description h2 {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.member-description p {
+  font-size: 20px;
+  padding: 10px;
+}
+
+.member-description img {
+  width: 30px;
+  padding: 1px;
+}
+
+
+footer {
+  padding: 25px;
+}
+
+@media screen and (max-width:924px) {
+  main {
+    width: 100%;
+  }
+
+  #mission {
+    width: 80%;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .member-description h2 {
+    font-size: 24px;
+  }
+  
+  .member-description p {
+    font-size: 18px;
+    
+  }
+}
+
+@media screen and (min-width: 767px) {
+  #mission p {
+    max-width: 546px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .member-description h2 {
+    font-size: 18px;
+    padding-bottom: 5px;
+  }
+  
+  .member-description p {
+    font-size: 15px;
+  }
+}
+
+
+button:active {
+  outline-style: none;
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
+
+p {
+  font-weight:lighter;
+  color:gray;
+  
+}
+
+h2 {
+  font-weight: bolder;
+}
+
+button:hover {
+  filter: brightness(110%);
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InspirationHub</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/my-board.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" class="title">InspirationHub</a></h1>
+        <ul>
+          <li id="my board"><a class="current-page" href="my-board.html">My Board</a></li>
+          <li id="archive"><a href="archive.html">Archive</a></li>
+          <li id="about"><a href="about.html">About</a></li>
+          <li><a href="api.html">Discover</a></li>
+        </ul>
+      </header>
+      
+    <main>
+    <div id="quote-board">
+        <!-- <div id="quote-container">
+            <div id="quote-text"></div>
+            <div id="quote-author"></div>
+        </div> -->
+    </div>
+    <form id = "new-quote-form">
+        <legend>Add Quote</legend>
+            <label for="quote-input"></label>
+            <textarea type="text" id="name-input" placeholder="Type your quote here" name="quoteText" required></textarea>
+            <label for="author-input"></label>
+            <textarea type="text" id="author-input" placeholder="Author" name="authorText" required></textarea>
+            <button type="submit">SUBMIT</button>
+            <p id="close-button">Cancel</p>
+    </form>
+    <!-- <button id="openButton">+</button>
+    <button id="closeButton">x</button> -->
+    <div id="open-close-buttons">
+        <button id="openButton">+</button>
+        <!-- <button id="closeButton"><p>+</p></button> -->
+    </div>
+</main>
+    <footer>
+        <div class="flex">
+            <img class="self-center w-8 mr-1" src="images/social-icons/github-icon.png" />
+            <img class="self-center w-8 mr-1" src="images/social-icons/facebook-icon.png" />
+            <img class="self-center w-8 mr-1" src="images/social-icons/twitter-icon.png" />
+            <img class="self-center w-8 mr-1" src="images/social-icons/insta-icon.png" />
+          </div>    
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>

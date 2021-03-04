@@ -1,0 +1,42 @@
+*{
+  box-sizing: border-box;
+}
+
+main{
+  margin: 0 auto;
+  max-width: 960px;
+  height: 85%;
+}
+
+#quote-archive {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#quote-archive td, #quote-archive th {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+#quote-archive td {
+  text-align:center;
+}
+
+#quote-archive tr:nth-child(odd){
+  background-color: #f2f2f2;
+}
+
+#quote-archive tr:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+#quote-archive th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-weight:bolder;
+  text-align: left;
+  background-color: white;
+  color:black;
+}
