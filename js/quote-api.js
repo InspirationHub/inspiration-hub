@@ -23,8 +23,6 @@ function generateQuoteList() {
       .then(response => {
         for (let j = 0; j < 10; j++) {
           let quote = response.data.data[j];
-          // console.log(quote.quoteAuthor)
-          // console.log(quote.quoteText)
           quotes.push([quote.quoteAuthor, quote.quoteText]);
         }
       })
@@ -44,4 +42,10 @@ function refreshQuote() {
 
 refreshQuote();
 
+function addToBoard() {
+  // do some things
+  refreshQuote();
+}
+
 refreshButtonElem.addEventListener('click', refreshQuote);
+addToBoardButtonElem.addEventListener('click', addToBoard);
