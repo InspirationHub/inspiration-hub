@@ -85,3 +85,8 @@ footer img {
 .title:hover {
   color: black;
 }
+
+.title{
+  text-decoration: none;
+  color: black;
+}
